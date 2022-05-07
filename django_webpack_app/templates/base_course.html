@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main class="content">
+    <section class="content__nav">
+        <div class="container">
+            <nav class="course__nav nav">
+                <ul class="course__nav-list nav__list list">
+                    {% placeholder "Navigation" %}
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <div class="container">
+        <section class="content__page page">
+            <aside class="page__aside side-menu">
+                <ul class="side-menu__list list">
+                    {% placeholder "Menu" %}
+                </ul>
+            </aside>
+            <section class="page__content page__content--course">
+                {% placeholder "Content" %}
+            </section>
+        </section>
+    </div>
+</main>
+</body>
+</html>
+{% endblock content %}

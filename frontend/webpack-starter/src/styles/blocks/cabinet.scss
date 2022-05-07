@@ -1,0 +1,22 @@
+.cabinet {
+  &__header {
+    position: relative;
+
+    height: rem(320px);
+
+    background-color: $silver;
+
+    &-banner {
+      position: absolute;
+
+      height: 100%;
+      width: 100%;
+
+      object-fit: cover;
+    }
+  }
+
+  &__profile-block {
+    margin-top: rem($offset-xxl);
+  }
+}

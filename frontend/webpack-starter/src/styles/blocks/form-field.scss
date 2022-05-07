@@ -1,0 +1,114 @@
+.form-field {
+    $line-height: 1;
+
+    position: relative;
+
+    &.is-active & {
+        &__label {
+            transform: translate(0, 3px) scale(.7);
+        }
+    }
+
+    &--search & {
+        &__label {
+            left: rem($offset-xxl);
+
+            color: $blue-haze;
+        }
+
+        &__input {
+            padding: 0 rem($offset-xxl);
+
+            border: none;
+            border-radius: rem(20px);
+            background-color: $white;
+        }
+
+        &__icon {
+            width: rem(24px);
+            height: rem(24px);
+
+            color: $medium-purple;
+        }
+
+        &__button {
+            position: absolute;
+            top: 25%;
+            left: rem($offset-xs);
+
+            width: rem(24px);
+            height: rem(24px);
+            padding: 0;
+        }
+    }
+
+    &__inner {
+        position: relative;
+    }
+
+    &__label {
+        font-size: rem($fontSizeXS);
+
+        position: absolute;
+        top: 0;
+        left: rem($offset);
+
+        transition: all 150ms ease-in-out;
+        transform: translate(0, 16px) scale(1);
+        transform-origin: top left;
+        white-space: nowrap;
+        pointer-events: none;
+
+        color: $deepBlue;
+    }
+
+    &__input {
+        font-size: rem($fontSizeXS);
+        line-height: $line-height;
+
+        width: 100%;
+        height: rem(47px);
+        padding: rem($offset);
+        padding-right: rem($offset-xl);
+
+        transition: all 150ms ease-in-out;
+
+        border: rem(1px) solid $blue-haze;
+        border-radius: rem($border-radius-default);
+        outline: 0;
+        background-color: transparent;
+
+        &:hover {
+            border-color: $blue-haze;
+        }
+
+        &:focus {
+            border-color: $havelock-blue;
+        }
+    }
+
+    &__clear {
+        &-icon {
+            width: rem(16px);
+            height: rem(16px);
+        }
+
+        &-button {
+            position: absolute;
+            top: rem($offset);
+            right: rem($offset-tiny);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: rem(16px);
+            height: rem(16px);
+            padding: 0;
+
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+    }
+}

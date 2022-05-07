@@ -1,0 +1,12 @@
+.link {
+  cursor: pointer;
+  text-underline: none;
+  text-decoration: none;
+
+  color: $deepBlue;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    color: rgba($medium-purple, .8);
+  }
+}

@@ -1,0 +1,14 @@
+.title {
+  margin: 0;
+  padding: 0;
+
+  &--medium {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+  }
+
+  &--bold {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+  }
+}

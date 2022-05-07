@@ -1,0 +1,47 @@
+/*!**********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss ***!
+  \**********************************************************************************************************************************************************/
+@charset "UTF-8";
+/**
+  * Fonts
+  */
+/**
+  * Colors
+  *
+  */
+/**
+  * Breakpoints
+  */
+/**
+ * Для таблице архива
+ */
+/**
+  * Sizes
+  */
+/**
+  * Z-index
+  */
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem; }
+  @media (min-width: 768px) {
+    .container {
+      padding-right: 1.25rem;
+      padding-left: 1.25rem; } }
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 85.375rem;
+      padding-right: 5rem;
+      padding-left: 5rem; } }
+
+.icon--pin {
+  width: 1.25rem;
+  height: 1.25rem; }
+
+body {
+  color: slateblue;
+  font-family: sans-serif; }
+

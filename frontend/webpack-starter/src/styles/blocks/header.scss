@@ -1,0 +1,51 @@
+.header {
+  background-color: $white;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    flex-flow: nowrap row;
+    justify-content: space-between;
+
+    height: rem(82px);
+    padding: rem($offset) 0;
+  }
+
+  &__logout {
+    display: flex;
+    align-items: center;
+
+    margin-left: $offset;
+  }
+
+  &__link {
+    display: block;
+
+    width: min-content;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    width: 20%;
+  }
+
+  &__title {
+    margin: 0;
+    margin-left: rem($offset);
+
+    white-space: nowrap;
+  }
+
+  &__profile {
+    width: rem(200px);
+  }
+
+  &__enter {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 20%;
+  }
+}

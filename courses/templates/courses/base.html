@@ -1,0 +1,72 @@
+{% load cms_tags menu_tags sekizai_tags %}
+{% load static %}
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}ВУЦ ВШЭ | ПЛАТФОРМА{% endblock title %}</title>
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% render_block "css" %}
+    <link type="text/css" href="{% static 'django_webpack_app/css/app.css' %}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    {% cms_toolbar %}
+</div>
+<header class="header">
+    <div class="header__container container">
+        <div class="header__row">
+            <div class="header__logo logo">
+                <a href="{% url 'courses:home_url' %}" class="header__link">
+                    <img class="logo__image" src="{% static 'images/logo.png' %}" alt="Логотип"/>
+                </a>
+                <h2 class="header__title">Программы подготовки цикла РВСН</h2>
+            </div>
+            {% if user.is_authenticated %}
+            <div class="header__profile profile">
+                <div class="profile__user">
+                    <p class="profile__user-text">{{ user.get_username }}</p>
+                </div>
+                <div class="profile__avatar">
+                    <a class="profile__avatar-inner" href="#">
+                        <img class="profile__avatar-image" src="{% static 'images/с1.jpg' %}" alt="Аватар"/>
+                    </a>
+                </div>
+                <div class="header__logout">
+                    <form action="{% url 'courses:logout_url'%}">
+                        <button type="submit" class="header__enter-button button button--default">
+                            <svg class="button__icon icon">
+                                <use xlink:href="{% static 'icons/sprite.svg' %}#enter"></use>
+                            </svg>
+                            Выйти
+                        </button>
+                    </form>
+                </div>
+            </div>
+            {% else %}
+            <!--            //// NOT AUTH ////-->
+            <div class="header__enter">
+                <button type="button" class="header__enter-button button button--default js-open-auth-modal">
+                    <svg class="button__icon icon">
+                        <use xlink:href="{% static 'icons/sprite.svg' %}#enter"></use>
+                    </svg>
+                    Войти
+                </button>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</header>
+{% block content %}
+{% endblock content %}
+{% render_block "js" %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="{% static 'django_webpack_app/js/app.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'django_webpack_app/js/vendors-node_modules_core-js_modules_es_array_find_js-node_modules_jquery_dotdotdot_dist_jque-eb2adf.js' %}"></script>
+</body>
+</html>

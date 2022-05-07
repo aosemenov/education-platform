@@ -1,0 +1,11 @@
+.icon {
+  display: block;
+  cursor: pointer;
+
+  fill: currentColor;
+  color: currentColor;
+
+  &:hover {
+    color: rgba($havelock-blue, .5);
+  }
+}

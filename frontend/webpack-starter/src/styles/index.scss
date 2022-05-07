@@ -1,0 +1,60 @@
+// resets
+@import '~normalize-scss/sass/normalize.scss';
+
+//vendors
+@import '~remodal/dist/remodal.css';
+@import '~remodal/dist/remodal-default-theme.css';
+
+// abstracts
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+//base
+@import 'base/fonts';
+@import 'base/generic';
+@import 'base/typography';
+@import 'base/vendor';
+
+// blocks
+@import 'blocks/container';
+@import 'blocks/icon';
+@import 'blocks/header';
+@import 'blocks/nav';
+@import 'blocks/profile';
+@import 'blocks/logo';
+@import 'blocks/list';
+@import 'blocks/link';
+@import 'blocks/content';
+@import 'blocks/tabs';
+@import 'blocks/card';
+@import 'blocks/courses';
+@import 'blocks/button';
+@import 'blocks/title';
+@import 'blocks/modal';
+@import 'blocks/form';
+@import 'blocks/form-field';
+@import 'blocks/navigation';
+@import 'blocks/cabinet';
+@import 'blocks/profile-block';
+@import 'blocks/page';
+@import 'blocks/side-menu';
+@import 'blocks/course';
+
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url('../../fonts/Roboto-Bold.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Medium';
+  src: url('../../fonts/Roboto-Medium.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url('../../fonts/Roboto-Regular.ttf');
+  font-style: normal;
+}

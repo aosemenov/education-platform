@@ -1,0 +1,44 @@
+{% extends "./base.html" %}
+{% load cms_tags %}
+{% load static %}
+{% block content %}
+
+<body>
+<main class="content">
+    <div class="container">
+        <h2>Авторизуйтесь</h2>
+    </div>
+    <div class="remodal modal modal--auth js-auth-modal">
+    <a class="modal__close js-modal-close">
+        <svg class="modal__icon icon">
+            <use xlink:href="{% static 'icons/sprite.svg' %}#close"></use>
+        </svg>
+    </a>
+    <section class="modal__content">
+        <header class="modal__header">
+            <h2 class="modal__title title title--medium">Выполните вход</h2>
+        </header>
+        <form class="modal__form form" method="POST" action="{% url 'courses:home_url' %}">
+            {% csrf_token %}
+            <div class="form__field form-field js-form-field">
+                <div class="form-field__inner">
+                    <label class="form-field__label" for="user-login-main">Имя пользователя</label>
+                    <input class="form-field__input js-form-field-input" id="user-login-main" type="text"
+                           name="USER_LOGIN" autocomplete="off" oninput="this.value=this.value.replace(/\s+/gi,'')">
+                </div>
+            </div>
+            <div class="form__field form-field is-empty js-form-field">
+                <div class="form-field__inner">
+                    <label class="form-field__label" for="user-password">Пароль</label>
+                    <input class="form-field__input js-form-field-input" id="user-password" type="password"
+                           name="USER_PASSWORD" autocomplete="off">
+                </div>
+            </div>
+            <button type="submit" class="modal__button button button--default">Войти</button>
+        </form>
+    </section>
+</div>
+</main>
+</body>
+
+{% endblock content %}

@@ -1,0 +1,16 @@
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: rem($container-padding-mobile);
+    padding-left: rem($container-padding-mobile);
+
+    @media #{$media-min-tablet} {
+        padding-right: rem($container-padding-tablet);
+        padding-left: rem($container-padding-tablet);
+    }
+
+    @media #{$media-min-desktop-lg} {
+        max-width: rem($max-container-width-desktop-xl);
+    }
+}

@@ -1,0 +1,53 @@
+.profile {
+  display: flex;
+  flex-flow: nowrap row;
+  justify-content: flex-end;
+
+  &__user {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    margin: 0 rem($offset);
+
+    &-text {
+      display: block;
+      overflow: hidden;
+
+      text-align: right;
+
+      width: rem(112px); //magic num
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__avatar {
+    &-inner {
+      position: relative;
+
+      display: block;
+      overflow: hidden;
+
+      width: rem(50px);
+      height: rem(50px);
+
+      border-radius: 50%;
+    }
+
+    &-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 100%;
+      height: 100%;
+
+      transform: translate(-50%, -50%);
+
+      object-fit: cover;
+    }
+  }
+}

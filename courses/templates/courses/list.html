@@ -1,0 +1,101 @@
+{% extends "./base.html" %}
+{% load cms_tags %}
+{% load static %}
+{% block content %}
+<body>
+<main class="content">
+    {% if user.is_authenticated %}
+    <div class="tabs">
+        <section class="content__navigation">
+            <div class="content__header container">
+                <nav class="navigation tabs__items">
+                    <ul class="navigation__list list tabs__list">
+                        <li class="navigation__item-link button button--default tabs__item is-active"
+                            data-tab="my-courses">
+                            <svg class="button__icon icon">
+                                <use xlink:href="{% static 'icons/sprite.svg' %}#folder"></use>
+                            </svg>
+                            Мои курсы
+                        </li>
+                        <li class="navigation__item-link button button--default is-disabled tabs__item"
+                            data-tab="my-finished">
+                            <svg class="button__icon icon">
+                                <use xlink:href="{% static 'icons/sprite.svg' %}#done"></use>
+                            </svg>
+                            Тестирование
+                        </li>
+                    </ul>
+                </nav>
+                <div class="content__search search">
+                    <form class="search__form form" method="GET" action="">
+                        {% csrf_token %}
+                        <div class="form__field form-field form-field--search js-form-field">
+                            <div class="form-field__inner">
+                                <label class="form-field__label" for="search-main">Поиск по курсам</label>
+                                <input class="form-field__input js-form-field-input" id="search-main" type="text"
+                                       name="SEARCH" autocomplete="off">
+                                <button type="submit" class="form-field__button button">
+                                    <svg class="form-field__icon icon">
+                                        <use xlink:href="{% static 'icons/sprite.svg' %}#search"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="content__courses courses">
+            <div class="container">
+                <section class="courses__block tabs__block is-active" data-tab="my-courses">
+                    <ul class="courses__list list">
+                        {% if class_list %}
+                        {% for item in class_list %}
+                        <li class="courses__item">
+                                <article class="courses__item-card card">
+                                    <a href="{{ item.get_absolute_url }}" class="card__link">
+                                    <div class="card__inner">
+                                        <header class="card__header">
+                                            <div class="card__header-shadow"></div>
+                                            {% if item.image %}
+                                            <img class="card__header-image" src="{{ item.image.url }}"
+                                                 alt="Картинка курса">
+                                            {% else %}
+                                            <img class="card__header-image" src="{% static 'images/noimg.jpg' %}"
+                                                 alt="Картинка курса">
+                                            {% endif %}
+                                        </header>
+                                        <div class="card__content">
+                                            <header class="card__content-header">
+                                                <h3 class="card__content-title title">{{ item.title }}</h3>
+                                            </header>
+                                            <span class="card__content-description" data-truncate>
+                                                    {{ item.description }}
+                                                </span>
+                                            <a class="card__content-link link" href="{{ item.href }}">
+                                                <button type="button"
+                                                        class="header__enter-button button button--default">
+                                                    Описание
+                                                </button>
+                                            </a>
+                                            <footer class="card__footer">
+                                                <span class="card__delimiter"></span>
+                                                <span class="card__footer-date">{{ item.date }}</span>
+                                                <span class="card__footer-statistics">{{ item.groups }}</span>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </li>
+                        {% endfor %}
+                        {% endif %}
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </div>
+    {% endif %}
+</main>
+</body>
+{% endblock content %}

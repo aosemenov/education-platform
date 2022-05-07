@@ -1,0 +1,29 @@
+.page {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+
+  &__content {
+    width: 100%;
+    min-height: rem(720px);
+    margin-left: rem($offset-m);
+    padding: rem($offset) rem($offset-xl);
+
+    border-radius: rem(24px);
+    background-color: $white;
+
+    &--course {
+      width: 78%;
+      margin-left: auto;
+    }
+  }
+
+  &__aside {
+    font-size: rem($fontSizeXS);
+
+    width: rem(380px);
+
+    border-radius: rem(24px);
+    background-color: $white;
+  }
+}

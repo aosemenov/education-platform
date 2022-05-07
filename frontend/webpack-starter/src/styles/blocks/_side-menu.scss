@@ -1,0 +1,17 @@
+.side-menu {
+  position: sticky;
+  top: rem(25px);
+  
+  width: 18%;
+  max-width: rem(250px);
+
+  &__item {
+    padding: rem($offset);
+
+    border-bottom: rem(1px) solid $selago;
+
+    &:last-child {
+      border: none;
+    }
+  }
+}

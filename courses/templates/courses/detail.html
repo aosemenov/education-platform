@@ -1,0 +1,124 @@
+{% extends "./base.html" %}
+{% load menu_tags sekizai_tags cms_tags %}
+{% load static %}
+{% block content %}
+<body>
+<main class="content">
+    <section class="content__nav">
+        <div class="container">
+            <nav class="course__nav nav">
+                <ul class="course__nav-list nav__list list">
+                    <li class="course__nav-item nav__item">
+                        <a class="course__nav-link link" href="{% url 'courses:courses_url' %}">Список курсов</a>
+                    </li>
+                    <span class="course__nav-span"></span>
+                    <li class="course__nav-item nav__item">
+                        {{ class.title }}
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <div class="tabs">
+        <section class="content__navigation">
+            <div class="container">
+                <nav class="navigation tabs__items">
+                    <ul class="navigation__list list tabs__list">
+                        <li class="navigation__item-link button button--default tabs__item is-active"
+                            data-tab="general">
+                            <svg class="button__icon icon">
+                                <use xlink:href="{% static 'icons/sprite.svg' %}#folder"></use>
+                            </svg>
+                            Общие дисциплины
+                        </li>
+                        <li class="navigation__item-link button button--default tabs__item"
+                            data-tab="special">
+                            <svg class="button__icon icon">
+                                <use xlink:href="{% static 'icons/sprite.svg' %}#unlock"></use>
+                            </svg>
+                            Специальные дисциплины
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <div class="content__course course">
+            <div class="container">
+                <section data-tab="general" class="courses__block tabs__block is-active">
+                    <ul class="courses__list list">
+                        {% for item in class.general_classes.all %}
+                        <li class="courses__item">
+                            <article class="courses__item-card card">
+                                <a href="{{ item.href }}" class="card__link" data-detail-view>
+                                    <div class="card__inner">
+                                        <header class="card__header">
+                                            <div class="card__header-shadow"></div>
+                                            {% if item.image %}
+                                            <img class="card__header-image" src="{{ item.image.url }}"
+                                                 alt="Картинка курса">
+                                            {% else %}
+                                            <img class="card__header-image" src="{% static 'images/с3.jpg' %}"
+                                                 alt="Картинка курса">
+                                            {% endif %}
+                                        </header>
+                                        <div class="card__content">
+                                            <header class="card__content-header">
+                                                <h3 class="card__content-title title">{{ item.name }}</h3>
+                                            </header>
+                                            <span class="card__content-description" data-truncate>
+                                                    {{ item.description }}
+                                            </span>
+                                            <footer class="card__footer">
+                                                <span class="card__footer-date"></span>
+                                                <span class="card__footer-statistics"></span>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+                <section data-tab="special" class="courses__block tabs__block">
+                    <ul class="courses__list list">
+                        {% for item in class.classes.all %}
+                        <li class="courses__item">
+                            <article class="courses__item-card card">
+                                <a href="{{ item.href }}" class="card__link" data-detail-view>
+                                    <div class="card__inner">
+                                        <header class="card__header">
+                                            <div class="card__header-shadow"></div>
+                                            {% if item.image %}
+                                            <img class="card__header-image" src="{{ item.image.url }}"
+                                                 alt="Картинка курса">
+                                            {% else %}
+                                            <img class="card__header-image" src="{% static 'images/noimg.jpg' %}"
+                                                 alt="Картинка курса">
+                                            {% endif %}
+                                        </header>
+                                        <div class="card__content">
+                                            <header class="card__content-header">
+                                                <h3 class="card__content-title title">{{ item.name }}</h3>
+                                            </header>
+                                            <span class="card__content-description" data-truncate>
+                                                    {{ item.description }}
+                                            </span>
+                                            <footer class="card__footer">
+                                                <span class="card__footer-date"></span>
+                                                <span class="card__footer-statistics"></span>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+{% endblock content %}

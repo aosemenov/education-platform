@@ -1,0 +1,71 @@
+.button {
+  font-size: rem($baseFontSize);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  border: none;
+  border-radius: rem($border-radius-default);
+  outline: 0;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    color: $medium-purple;
+  }
+
+  &--empty {
+    background-color: transparent;
+  }
+
+  &--default {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: rem($baseFontSize);
+
+    min-width: rem(120px);
+    padding: rem($offset-tiny) rem($offset-xs);
+
+    color: $medium-purple;
+    border: rem(1px) solid $blue-haze;
+    border-radius: rem(24px);
+    background-color: $white;
+
+    &:hover,
+    &:active {
+      color: $white;
+      border: rem(1px) solid rgba($havelock-blue, .1);
+      background-color: rgba($havelock-blue, .5);
+    }
+
+    &.is-active {
+      color: $white;
+      border: rem(1px) solid $havelock-blue;
+      background: $havelock-blue;
+    }
+
+    &.is-disabled {
+      cursor: default;
+
+      color: $shuttleGray;
+      border: rem(1px) solid $platinum;
+      background: $platinum;
+    }
+  }
+
+  &--default & {
+    &__icon {
+      pointer-events: none;
+    }
+  }
+
+  &__icon {
+    width: rem(20px);
+    height: rem(20px);
+    margin-right: rem($offset-tiny);
+  }
+}

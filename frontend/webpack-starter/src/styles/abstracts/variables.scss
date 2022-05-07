@@ -1,0 +1,120 @@
+/**
+  * Fonts
+  */
+
+$baseFontSize: 16px;
+
+$fontSizeXXXL: 36px;
+$fontSizeXXL: 32px;
+$fontSizeXL: 28px;
+$fontSizeL: 24px;
+$fontSizeM: 20px;
+$fontSizeS: 18px;
+$fontSizeXS: 14px;
+
+/**
+  * Colors
+  *
+  */
+
+$white: #fff;
+$black: #000;
+
+// gray
+$gray: #808080;
+$gentleGray: #e6e7ea;
+$lightGray: #f2f2f2;
+$gallery: #eaeaea;
+$alto: #dedede;
+$alabaster: #f8f8f8;
+$mystic: #e1e6eC;
+$boulder: #787878;
+$wildBlueYonder: #718cb1;
+$regentGray: #7b929b;
+$mako: #404653;
+$doveGray: #6B6B6B;
+$silver: #cdcdcd;
+$gallery: #ececec;
+$brightGray: #3f4552;
+$bombay: #b8babf;
+$shuffleGray: #585e69;
+$osloGray: #848890;
+$snow: #fafafa;
+$platinum: #e7e7e7;
+$pastelGray: #c9c9c9;
+$silver: #c4c4c4;
+$shuttleGray: #575d68;
+
+$tiber: #0a2b37;
+
+$color-text: rgba($tiber, .8);
+
+//
+$selago: #F7F7FE;
+$blue-haze: #C7C7DD;
+$medium-purple: #775CD9;
+$melrose: #AE9EFD;
+$havelock-blue: #5F75D8;
+// blue
+$blue: #13407d;
+$deepBlue: #101828;
+
+/**
+  * Breakpoints
+  */
+$media-min-desktop-xl: '(min-width: 1440px)';
+$media-min-desktop-lg: '(min-width: 1280px)';
+$media-min-desktop: '(min-width: 1024px)';
+$media-min-tablet: '(min-width: 768px)';
+$media-max-mobile-xs: '(min-width: 568px)';
+$media-max-mobile-mini: '(min-width: 490px)';
+
+/**
+  * Sizes
+  */
+$max-container-width-desktop-xl: 1366px;
+$max-container-width-desktop-lg: 1170px;
+$max-container-width-tablet-landscape: 992px;
+$max-container-width-tablet: 768px;
+$max-container-width-mobile: 576px;
+
+$container-padding-mobile: 16px;
+$container-padding-tablet: 20px;
+$container-padding-desktop: 40px;
+$container-padding-desktop-lg: 80px;
+
+$border-radius-default: 5px;
+
+$offset-tiny: 10px;
+$offset-small: 12px;
+$offset: 16px;
+$offset-xs: 20px;
+$offset-m: 24px;
+$offset-l: 32px;
+$offset-xl: 40px;
+$offset-xxl: 56px;
+
+/**
+  * Z-index
+  */
+
+$bunker: #121920;
+$heather: #bbc4d6;
+$white: #ffffff;
+$curious-blue: #34aadd;
+$wild-blue-yonder: #6680ae;
+$cerise-red: #dc2c53;
+$tapestry: #a7507b;
+$carnation: #f95a59;
+$slate-gray: #768298;
+$athens-gray: #ebebf1;
+$mine-shaft: #3c3c3c;
+$alabaster: #fafafa;
+$tundora: #4b4b4b;
+
+$background-content-color: $white;
+
+$text-color-main: $bunker;
+$text-color-inverse: $white;
+$text-color-dark-gray: $slate-gray;
+$text-color-gray-light: $heather;

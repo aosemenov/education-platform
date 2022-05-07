@@ -1,0 +1,124 @@
+.card {
+    overflow: hidden;
+
+    border: none;
+    border-radius: rem(16px);
+    background-color: $white;
+
+    &:hover & {
+        &__header-shadow {
+            opacity: 0;
+        }
+
+        &__content {
+            &-header {
+                color: $medium-purple;
+            }
+
+            &-description {
+                color: $medium-purple;
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+
+        text-decoration: none;
+
+        color: $deepBlue;
+    }
+
+    &__inner {
+        display: flex;
+        flex-flow: nowrap column;
+    }
+
+    &__header {
+        position: relative;
+
+        overflow: hidden;
+
+        width: 100%;
+        height: rem(200px);
+
+        &-link {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        &-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            width: 100%;
+            height: auto;
+
+            transform: translate(-50%, -50%);
+
+            object-fit: cover;
+        }
+
+        &-shadow {
+            position: absolute;
+            z-index: 2;
+
+            width: 100%;
+            height: 100%;
+
+            opacity: .3;
+            background-color: $deepBlue;
+        }
+    }
+
+    &__content {
+        padding: rem($offset-xs) rem($offset-xs);
+
+        &-header {
+            margin-bottom: rem($offset);
+        }
+
+        &-link {
+            display: inline-block;
+
+            margin-bottom: 20px;
+        }
+
+        &-description {
+            display: block;
+            overflow: hidden;
+
+            max-height: rem(125px);
+            height: 100%;
+            min-height: rem(125px);
+        }
+    }
+
+    &__delimiter {
+        position: absolute;
+        top: rem(-20px);
+
+        width: 100%;
+        height: rem(1px);
+
+        background-color: #C7C7DD;
+
+        opacity: .3;
+    }
+
+    &__footer {
+        font-size: rem($fontSizeXS);
+
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-top: rem($offset);
+
+        color: $blue-haze;
+    }
+}

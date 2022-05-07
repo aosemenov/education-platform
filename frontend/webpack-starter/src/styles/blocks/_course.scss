@@ -1,0 +1,24 @@
+.course {
+  &__nav {
+    margin: rem($offset-xs) 0;
+
+    &-item {
+      margin: 0;
+
+      &:last-of-type {
+        color: $medium-purple
+      }
+    }
+
+    &-span {
+      $size: 5px;
+
+      width: rem($size);
+      height: rem($size);
+      margin: 0 rem($offset-small);
+
+      border-radius: percentage(1 / 2);
+      background-color: $medium-purple;
+    }
+  }
+}
